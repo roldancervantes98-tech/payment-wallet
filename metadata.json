@@ -1,0 +1,6 @@
+{
+  "name": "SwiftPay",
+  "description": "A clean, modern, simplified payment application.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

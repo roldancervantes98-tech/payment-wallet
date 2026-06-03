@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Syne:wght@400..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-navy-dark: #0A0F2C;
+  --color-navy-card: #141A3B;
+  --color-electric-blue: #4F8EF7;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-syne: "Syne", sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: #0A0F2C;
+    color: #ffffff;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Glassmorphism utility */
+.card-glass {
+  background: rgba(20, 26, 59, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Gradient Shimmer Effect for Balance Card */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-bg {
+  background: linear-gradient(
+    135deg,
+    #4F8EF7 0%,
+    #2E6CD1 30%,
+    #69A3FF 50%,
+    #1E52B7 70%,
+    #4F8EF7 100%
+  );
+  background-size: 200% auto;
+  animation: shimmer 8s linear infinite;
+}
+
+/* Pulse soft highlight for success states */
+@keyframes softPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(79, 142, 247, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px 4px rgba(79, 142, 247, 0.2);
+  }
+}
+
+.pulse-primary {
+  animation: softPulse 2s infinite ease-in-out;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0F2C;
+}
+::-webkit-scrollbar-thumb {
+  background: #141A3B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4F8EF7;
+}
